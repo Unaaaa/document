@@ -20,7 +20,8 @@ HOG：方向梯度直方图（HOG,Histogram of Gradient）
 - 目前在行人识别领域应用最为广泛
 - 是一个局部特征，需要结合图像分割使用
 - 通过局部cell操作再组合使得对几何和光学形变适应能力强
-![](http://upload-images.jianshu.io/upload_images/8920871-34f92908d86b6dbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](http://upload-images.jianshu.io/upload_images/8920871-927771cc50931a53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### HOG算法的原理和具体实现步骤：
