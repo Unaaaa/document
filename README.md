@@ -168,7 +168,7 @@ plt.show()
 
 对其进行变量替换可以得到：
 
-![A(x)d(x)=\Delta b(x)]=(https://latex.codecogs.com/gif.latex?A(x)d(x)=\Delta b(x))
+![A(x)d(x)=\Delta b(x)](https://latex.codecogs.com/gif.latex?A(x)d(x)=\Delta b(x))
 
 但是，由于实际图像的变化并不完全满足` *f(x)* `的函数关系，因此，我们的目标在于使等式左右两边的差值最小化，具体而言，也就是最小化下式：
 
