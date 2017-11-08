@@ -37,7 +37,7 @@ HOG：方向梯度直方图（HOG,Histogram of Gradient）
 式中![](https://latex.codecogs.com/gif.latex?G_x(x,y))，![](https://latex.codecogs.com/gif.latex?G_y(x,y))，H(x,y)分别表示输入图像中像素点（x，y）处的水平方向梯度、垂直方向梯度和像素点。像素点（x，y）处的梯度幅值和梯度方向分别为：
 ![](https://latex.codecogs.com/gif.latex?G(x,y)=\sqrt{G_x(x,y)^2+G_y(x,y)^2})
 ![](https://latex.codecogs.com/gif.latex?\alpha(x,y)=tan^{-1}(\frac{G_x(x,y)}{G_y(x,y)}))
-```cpp
+```py
 height, width = img.shape
 gradient_values_x = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=5)
 gradient_values_y = cv2.Sobel(img, cv2.CV_64F, 0, 1, ksize=5)
@@ -50,7 +50,7 @@ print gradient_magnitude.shape, gradient_angle.shape
 具体方法：对每个cell的360度划分bin, 统计在每个梯度方向bin中的像素点个数进行投票，投票权重为改点的梯度幅值（也可使用与幅值相关的函数，但经试验效果没有简单幅值好）
 ![](http://upload-images.jianshu.io/upload_images/8920871-22c2decde8e2c1c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 具体操作中，往往使用三线性差值，即将当前像素的梯度方向大小、像素在cell中的x坐标与y坐标这三个值来作为插值权重，而被用来插入的值为像素的梯度幅值。采用三线性插值的好处在于：避免了梯度方向直方图在cell边界和梯度方向量化的bin边界处的突然变化。
-```cpp
+```py
 cell_size = 8
 bin_size = 8
 angle_unit = 360 / bin_size
@@ -89,7 +89,7 @@ for i in range(cell_gradient_vector.shape[0]):
 这种混叠效应增强了块与块之间的联系，使得局部信息得到连接。
 一个block内所有cell的特征descriptor串联起来便得到该block的HOG特征descriptor。
 ![](http://upload-images.jianshu.io/upload_images/8920871-78939926d4f62701.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-```cpp
+```py
 import math
 import matplotlib.pyplot as plt
 
