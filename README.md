@@ -124,9 +124,7 @@ plt.show()
 （当图片识别未发现老鼠时，小车持续原地左转，直到小车视野范围内出现小鼠，开始追踪）
 ![](http://upload-images.jianshu.io/upload_images/8920871-3b529c1201c1f321.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 目标跟踪
-可以根据拍摄到的视频，自动判断出运动的物体并对其进行相应的像素标注与运动方向的展示
-## 实现原理
+
 ### 目标跟踪
 #### 理论基础
 我们的算法是基于光流法的。
